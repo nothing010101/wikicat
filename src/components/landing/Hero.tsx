@@ -1,10 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function Hero() {
   return (
     <section className="relative min-h-screen pt-20 overflow-hidden bg-gradient-to-b from-sky-300 via-sky-200 to-cyan-100 flex items-center">
-      {/* Cloud shapes — replace with /public/images/clouds-bg.png if available */}
+      {/* Cloud shapes */}
       <div className="absolute top-24 left-8 w-40 h-16 bg-white rounded-full opacity-80" />
       <div className="absolute top-20 left-20 w-28 h-14 bg-white rounded-full opacity-80" />
       <div className="absolute top-28 right-12 w-48 h-16 bg-white rounded-full opacity-80" />
@@ -59,27 +60,14 @@ export function Hero() {
 
         <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
           className="flex-1 flex justify-center items-end relative min-h-[340px]">
-          {/*
-            === IMAGE PLACEHOLDER: Cat Mascot ===
-            File: /public/images/cat-hero.png  (500x500px transparent PNG)
-            Replace the div below with:
-            <img src="/images/cat-hero.png" alt="Wikicat mascot" className="w-72 md:w-96 lg:w-[420px] drop-shadow-2xl animate-float" />
-          */}
-          <div className="w-72 md:w-80 h-72 md:h-80 bg-white/40 border-4 border-dashed border-white/60 rounded-3xl flex flex-col items-center justify-center backdrop-blur-sm shadow-xl">
-            <span className="text-6xl mb-3">🐱</span>
-            <span className="text-purple-800 font-black text-sm">CAT MASCOT IMAGE</span>
-            <span className="text-purple-600 text-xs mt-1">/public/images/cat-hero.png</span>
-          </div>
-          {/*
-            === IMAGE PLACEHOLDER: Coin stacks ===
-            File: /public/images/coins.png  (200x200px transparent PNG)
-            Replace the div below with:
-            <img src="/images/coins.png" alt="WIKI coins" className="absolute -bottom-4 -right-4 w-32 md:w-40 drop-shadow-xl" />
-          */}
-          <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-yellow-200/80 border-2 border-dashed border-yellow-500 rounded-2xl flex flex-col items-center justify-center">
-            <span className="text-2xl">🪙</span>
-            <span className="text-yellow-700 text-xs font-bold text-center leading-tight">coins.png</span>
-          </div>
+          <Image
+            src="/images/cat-hero.png"
+            alt="Wikicat mascot"
+            width={420}
+            height={420}
+            className="w-72 md:w-96 lg:w-[420px] drop-shadow-2xl"
+            priority
+          />
         </motion.div>
       </div>
 

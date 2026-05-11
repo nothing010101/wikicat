@@ -5,7 +5,6 @@ import Image from "next/image";
 export function Hero() {
   return (
     <section className="relative min-h-screen pt-20 overflow-hidden bg-wiki-dark flex items-center">
-      {/* Grid background already on parent, add subtle glow blobs */}
       <div className="absolute top-20 left-1/4 w-96 h-96 bg-wiki-yellow/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-wiki-purple/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -42,22 +41,10 @@ export function Hero() {
           </p>
 
           <div className="flex items-center gap-3 justify-center lg:justify-start mb-8">
-            <a href="#" target="_blank" rel="noopener noreferrer"
-              className="w-11 h-11 bg-wiki-card border border-wiki-border rounded-full flex items-center justify-center hover:border-wiki-yellow/40 hover:scale-110 transition-all" title="Telegram">
-              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-wiki-yellow">
-                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
-              </svg>
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
+            <a href="https://x.com/wikibasedcat" target="_blank" rel="noopener noreferrer"
               className="w-11 h-11 bg-wiki-card border border-wiki-border rounded-full flex items-center justify-center hover:border-wiki-yellow/40 hover:scale-110 transition-all" title="Twitter/X">
               <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer"
-              className="w-11 h-11 bg-wiki-card border border-wiki-border rounded-full flex items-center justify-center hover:border-wiki-yellow/40 hover:scale-110 transition-all" title="TikTok">
-              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
-                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.56a8.16 8.16 0 004.77 1.52V7.63a4.85 4.85 0 01-1-.94z"/>
               </svg>
             </a>
           </div>
@@ -92,7 +79,6 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Bottom fade into next section */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-wiki-dark to-transparent" />
     </section>
   );

@@ -2,10 +2,10 @@
 import { motion } from "framer-motion";
 
 const dist = [
-  { label: "Founder Pass Mint", pct: 50, color: "bg-purple-500", emoji: "🎟️" },
-  { label: "Community & Airdrops", pct: 20, color: "bg-sky-500", emoji: "🎁" },
-  { label: "Liquidity Pool", pct: 20, color: "bg-yellow-400", emoji: "💧" },
-  { label: "Development", pct: 10, color: "bg-pink-500", emoji: "🛠️" },
+  { label: "Founder Pass Mint", pct: 50, color: "bg-purple-500", emoji: "🎟️", note: "Minted progressively — 1M per slot" },
+  { label: "Liquidity Pool", pct: 49, color: "bg-yellow-400", emoji: "💧", note: "Already on-chain from day one" },
+  { label: "Treasury", pct: 0.8, color: "bg-sky-500", emoji: "🏦", note: "Locked 24 months" },
+  { label: "Team", pct: 0.2, color: "bg-pink-500", emoji: "🛠️", note: "Locked 12 months" },
 ];
 
 export function LandingTokenomics() {
@@ -13,10 +13,20 @@ export function LandingTokenomics() {
     <section id="tokenomics" className="py-20 bg-white">
       <div className="max-w-5xl mx-auto px-4">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          className="text-center mb-14">
+          className="text-center mb-6">
           <h2 className="text-4xl md:text-5xl font-black text-purple-700 mb-4">TOKENOMICS 🪙</h2>
-          <p className="text-gray-500 text-lg">Total Supply: <span className="font-black text-purple-700">5,000,000,000 $WIKI</span></p>
+          <p className="text-gray-500 text-lg">
+            Max Supply: <span className="font-black text-purple-700">10,000,000,000 $WIKI</span>
+          </p>
         </motion.div>
+
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="bg-purple-50 border border-purple-200 rounded-2xl p-5 mb-10 text-sm text-gray-600 leading-relaxed text-center max-w-2xl mx-auto">
+          5,000,000,000 $WIKI already exists on-chain (LP, Treasury, Team).<br />
+          The remaining 5,000,000,000 is minted slot-by-slot through the Founder Pass.<br />
+          <span className="text-purple-700 font-bold">If the mint period ends before all slots are filled, unfilled tokens are never minted and ETH is automatically refunded.</span>
+        </motion.div>
+
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="space-y-5">
             {dist.map((item, i) => (
@@ -31,6 +41,7 @@ export function LandingTokenomics() {
                     viewport={{ once: true }} transition={{ duration: 1, delay: i * 0.1 + 0.3 }}
                     className={`h-4 rounded-full ${item.color}`} />
                 </div>
+                <p className="text-xs text-gray-400 mt-1">🔸 {item.note}</p>
               </motion.div>
             ))}
           </div>
@@ -41,9 +52,10 @@ export function LandingTokenomics() {
                 { icon: "🎟️", label: "Per Founder Pass", value: "1,000,000 $WIKI + 1 NFT" },
                 { icon: "💰", label: "Mint Price", value: "0.0011 ETH" },
                 { icon: "🏷️", label: "Total Slots", value: "5,000 Only" },
+                { icon: "👛", label: "Max per Wallet", value: "30 Slots" },
                 { icon: "⛓️", label: "Network", value: "Base Mainnet" },
               ].map((row, i) => (
-                <div key={i} className={`flex items-center gap-3 ${i < 3 ? "border-b border-white/20 pb-5" : ""}`}>
+                <div key={i} className={`flex items-center gap-3 ${i < 4 ? "border-b border-white/20 pb-5" : ""}`}>
                   <span className="text-3xl">{row.icon}</span>
                   <div>
                     <div className="text-white/70 text-xs">{row.label}</div>

@@ -1,11 +1,18 @@
-import { getDefaultConfig } from "@rainbow-me/rainbowkit";
+import { createConfig, http } from "wagmi";
 import { base } from "wagmi/chains";
+import { injected, coinbaseWallet } from "wagmi/connectors";
 
-export const config = getDefaultConfig({
-  appName: "Wikicat ($WIKI)",
-  projectId:
-    process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "18b4abeb470c796e1c8a1dc8bff56195",
+export const config = createConfig({
   chains: [base],
+  connectors: [
+    injected(),
+    coinbaseWallet({ appName: "Wikicat ($WIKI)" }),
+  ],
+  transports: {
+    [base.id]: http(
+      process.env.NEXT_PUBLIC_RPC_URL || "https://mainnet.base.org"
+    ),
+  },
   ssr: true,
 });
 

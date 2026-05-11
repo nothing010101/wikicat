@@ -20,61 +20,25 @@
   --accent-foreground: 0 0% 95%;
 }
 
-* {
-  border-color: hsl(var(--border));
-}
+* { border-color: hsl(var(--border)); }
 
 body {
-  background-color: #0a0a0f;
   color: hsl(var(--foreground));
   font-family: var(--font-inter), system-ui, sans-serif;
   overflow-x: hidden;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #111118;
-}
-::-webkit-scrollbar-thumb {
-  background: #1e1e2e;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #FFD700;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111118; }
+::-webkit-scrollbar-thumb { background: #1e1e2e; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #FFD700; }
 
-/* Selection */
-::selection {
-  background: #FFD70044;
-  color: #FFD700;
-}
+::selection { background: #FFD70044; color: #FFD700; }
 
-/* Noise texture overlay */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.4;
-}
+.glow-yellow { box-shadow: 0 0 20px #FFD70033, 0 0 40px #FFD70011; }
+.glow-green { box-shadow: 0 0 20px #00FF8733, 0 0 40px #00FF8711; }
+.text-glow { text-shadow: 0 0 20px currentColor; }
 
-/* Glow utilities */
-.glow-yellow {
-  box-shadow: 0 0 20px #FFD70033, 0 0 40px #FFD70011;
-}
-.glow-green {
-  box-shadow: 0 0 20px #00FF8733, 0 0 40px #00FF8711;
-}
-.text-glow {
-  text-shadow: 0 0 20px currentColor;
-}
-
-/* Grid background */
 .grid-bg {
   background-image:
     linear-gradient(rgba(255, 215, 0, 0.03) 1px, transparent 1px),
@@ -82,7 +46,6 @@ body::before {
   background-size: 60px 60px;
 }
 
-/* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #FFD700 0%, #FF6B00 50%, #7C3AED 100%);
   -webkit-background-clip: text;
@@ -90,12 +53,8 @@ body::before {
   background-clip: text;
 }
 
-/* Progress bar */
-.progress-bar {
-  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
+.progress-bar { transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
 
-/* Card hover */
 .wiki-card {
   background: #111118;
   border: 1px solid #1e1e2e;
@@ -107,3 +66,9 @@ body::before {
   transform: translateY(-2px);
   box-shadow: 0 8px 32px #FFD70011;
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }

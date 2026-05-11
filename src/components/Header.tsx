@@ -1,6 +1,6 @@
 "use client";
 
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { ConnectButton } from "@/components/ConnectButton";
 import { motion } from "framer-motion";
 
 export function Header() {

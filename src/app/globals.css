@@ -72,3 +72,15 @@ body {
   50% { transform: translateY(-12px); }
 }
 .animate-float { animation: float 4s ease-in-out infinite; }
+/* NFT infinite scroll */
+.nft-scroll-track {
+  animation: nft-scroll 30s linear infinite;
+  width: max-content;
+}
+.nft-scroll-track:hover {
+  animation-play-state: paused;
+}
+@keyframes nft-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

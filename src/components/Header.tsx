@@ -12,52 +12,37 @@ export function Header() {
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center gap-3"
         >
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-wiki-yellow to-wiki-orange flex items-center justify-center text-black font-black text-sm">
-            W
-          </div>
-          <div>
-            <span className="font-black text-white text-lg tracking-tight">
-              Wikicat
-            </span>
-            <span className="text-wiki-yellow font-bold ml-1 text-sm">
-              $WIKI
-            </span>
-          </div>
+          {/*
+            === IMAGE PLACEHOLDER: Mint page logo ===
+            File: /public/images/logo-white.png  (white/light version for dark header)
+            Size: ~160x48px transparent PNG
+            Replace the div + text below with:
+            <img src="/images/logo-white.png" alt="Wikicat" className="h-10 w-auto" />
+          */}
+          <a href="/" className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-wiki-yellow to-wiki-orange flex items-center justify-center text-black font-black text-sm">
+              W
+            </div>
+            <div>
+              <span className="font-black text-white text-lg tracking-tight">Wikicat</span>
+              <span className="text-wiki-yellow font-bold ml-1 text-sm">$WIKI</span>
+            </div>
+          </a>
         </motion.div>
 
         <nav className="hidden md:flex items-center gap-6 text-sm text-gray-400">
-          <a href="#mint" className="hover:text-wiki-yellow transition-colors">
-            Mint
-          </a>
-          <a
-            href="#tokenomics"
-            className="hover:text-wiki-yellow transition-colors"
-          >
-            Tokenomics
-          </a>
-          <a
-            href="#how-it-works"
-            className="hover:text-wiki-yellow transition-colors"
-          >
-            How It Works
-          </a>
-          <a
-            href="#dashboard"
-            className="hover:text-wiki-yellow transition-colors"
-          >
-            Dashboard
-          </a>
+          <a href="/" className="hover:text-wiki-yellow transition-colors">Home</a>
+          <a href="#mint" className="hover:text-wiki-yellow transition-colors">Mint</a>
+          <a href="#tokenomics" className="hover:text-wiki-yellow transition-colors">Tokenomics</a>
+          <a href="#how-it-works" className="hover:text-wiki-yellow transition-colors">How It Works</a>
+          <a href="#dashboard" className="hover:text-wiki-yellow transition-colors">Dashboard</a>
         </nav>
 
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <ConnectButton
-            chainStatus="icon"
-            showBalance={false}
-            accountStatus="avatar"
-          />
+          <ConnectButton chainStatus="icon" showBalance={false} accountStatus="avatar" />
         </motion.div>
       </div>
     </header>

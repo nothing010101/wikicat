@@ -2,6 +2,7 @@
 
 import { ConnectButton } from "@/components/ConnectButton";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function Header() {
   return (
@@ -12,28 +13,22 @@ export function Header() {
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center gap-3"
         >
-          {/*
-            === IMAGE PLACEHOLDER: Mint page logo ===
-            File: /public/images/logo-white.png  (white/light version for dark header)
-            Size: ~160x48px transparent PNG
-            Replace the div + text below with:
-            <img src="/images/logo-white.png" alt="Wikicat" className="h-10 w-auto" />
-          */}
           <a href="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-wiki-yellow to-wiki-orange flex items-center justify-center text-black font-black text-sm">
-              W
-            </div>
-            <div>
-              <span className="font-black text-white text-lg tracking-tight">Wikicat</span>
-              <span className="text-wiki-yellow font-bold ml-1 text-sm">$WIKI</span>
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="Wikicat"
+              width={36}
+              height={36}
+              className="w-9 h-9 rounded-full object-cover"
+            />
+            <span className="font-black text-white text-lg tracking-tight">Wikicat</span>
+            <span className="text-wiki-yellow font-bold ml-1 text-sm">$WIKI</span>
           </a>
         </motion.div>
 
         <nav className="hidden md:flex items-center gap-6 text-sm text-gray-400">
           <a href="/" className="hover:text-wiki-yellow transition-colors">Home</a>
           <a href="#mint" className="hover:text-wiki-yellow transition-colors">Mint</a>
-          <a href="#tokenomics" className="hover:text-wiki-yellow transition-colors">Tokenomics</a>
           <a href="#how-it-works" className="hover:text-wiki-yellow transition-colors">How It Works</a>
           <a href="#dashboard" className="hover:text-wiki-yellow transition-colors">Dashboard</a>
         </nav>

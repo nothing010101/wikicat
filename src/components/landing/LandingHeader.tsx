@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export function LandingHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,15 +15,9 @@ export function LandingHeader() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-purple-700 to-purple-600 shadow-lg">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Logo
-          === IMAGE PLACEHOLDER ===
-          File: /public/images/logo.png  (transparent PNG ~300x100px)
-          Replace the div below with: <img src="/images/logo.png" alt="Wikicat" className="h-10 w-auto" />
-        */}
         <a href="/" className="flex items-center gap-2">
-          <div className="h-10 w-32 bg-white/20 border-2 border-dashed border-white/50 rounded-lg flex items-center justify-center">
-            <span className="text-white text-xs font-bold leading-tight text-center">LOGO HERE</span>
-          </div>
+          <Image src="/images/logo.png" alt="Wikicat" width={40} height={40} className="h-10 w-10 rounded-full object-cover" />
+          <span className="text-white font-black text-lg">WIKICAT</span>
         </a>
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (

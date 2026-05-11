@@ -5,7 +5,10 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 
-const PRIVATE_KEY = process.env.PRIVATE_KEY || "0x" + "0".repeat(64);
+const PRIVATE_KEY =
+  process.env.DEPLOYER_PRIVATE_KEY ||
+  process.env.PRIVATE_KEY ||
+  "0x" + "0".repeat(64);
 const BASESCAN_API_KEY = process.env.BASESCAN_API_KEY || "";
 
 const config: HardhatUserConfig = {

@@ -8,8 +8,8 @@ import {
   useWriteContract,
   useWaitForTransactionReceipt,
 } from "wagmi";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { parseEther, formatEther } from "viem";
+import { ConnectButton } from "@/components/ConnectButton";
+import { parseEther } from "viem";
 import { Minus, Plus, Zap, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { MINT_CONTRACT_ABI, CONTRACT_ADDRESSES } from "@/lib/contracts";
 
@@ -20,7 +20,6 @@ export function MintSection() {
   const { address, isConnected } = useAccount();
   const [quantity, setQuantity] = useState(1);
 
-  // Contract reads
   const { data: mintInfo, refetch: refetchMintInfo } = useReadContract({
     address: CONTRACT_ADDRESSES.mintContract,
     abi: MINT_CONTRACT_ABI,
@@ -41,7 +40,6 @@ export function MintSection() {
   const walletLeft = MAX_PER_WALLET - walletMinted;
   const maxMintable = Math.min(walletLeft, remaining, MAX_PER_WALLET);
 
-  // Contract write
   const { writeContract, data: txHash, isPending, error: writeError } = useWriteContract();
 
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({
@@ -81,7 +79,6 @@ export function MintSection() {
           viewport={{ once: true }}
           className="wiki-card p-8 relative overflow-hidden"
         >
-          {/* Background glow */}
           <div className="absolute inset-0 bg-gradient-radial from-wiki-yellow/5 via-transparent to-transparent pointer-events-none" />
 
           <div className="relative">
@@ -104,7 +101,6 @@ export function MintSection() {
               </p>
             </div>
 
-            {/* Quantity selector */}
             <div className="mb-6">
               <label className="block text-xs text-gray-500 uppercase tracking-widest mb-3">
                 Quantity (max {MAX_PER_WALLET}/wallet)
@@ -153,7 +149,6 @@ export function MintSection() {
               </div>
             </div>
 
-            {/* Price breakdown */}
             <div className="bg-wiki-dark border border-wiki-border rounded-xl p-4 mb-6 space-y-2">
               <div className="flex justify-between text-sm">
                 <span className="text-gray-500">Price per slot</span>
@@ -161,7 +156,7 @@ export function MintSection() {
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-500">Quantity</span>
-                <span className="text-white">× {quantity}</span>
+                <span className="text-white">x {quantity}</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-500">$WIKI you receive</span>
@@ -177,7 +172,6 @@ export function MintSection() {
               </div>
             </div>
 
-            {/* CTA */}
             {!isConnected ? (
               <div className="flex justify-center">
                 <ConnectButton label="Connect to Mint" />
@@ -193,9 +187,7 @@ export function MintSection() {
                     className="flex items-center justify-center gap-3 p-4 bg-wiki-green/10 border border-wiki-green/20 rounded-xl text-wiki-green"
                   >
                     <CheckCircle2 size={20} />
-                    <span className="font-bold">
-                      Minted! Check your wallet.
-                    </span>
+                    <span className="font-bold">Minted! Check your wallet.</span>
                   </motion.div>
                 ) : (
                   <motion.button

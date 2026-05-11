@@ -9,7 +9,7 @@ import { LandingFooter } from "@/components/landing/LandingFooter";
 
 export default function LandingPage() {
   return (
-    <main className="min-h-screen overflow-x-hidden">
+    <main className="min-h-screen overflow-x-hidden bg-wiki-dark grid-bg">
       <LandingHeader />
       <Hero />
       <WhatIsWiki />

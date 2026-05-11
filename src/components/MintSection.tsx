@@ -7,18 +7,25 @@ import {
   useReadContract,
   useWriteContract,
   useWaitForTransactionReceipt,
+  useChainId,
+  useSwitchChain,
 } from "wagmi";
 import { ConnectButton } from "@/components/ConnectButton";
 import { parseEther } from "viem";
-import { Minus, Plus, Zap, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Minus, Plus, Zap, CheckCircle2, AlertCircle, Loader2, AlertTriangle } from "lucide-react";
 import { MINT_CONTRACT_ABI, CONTRACT_ADDRESSES } from "@/lib/contracts";
+import { base } from "@/lib/wagmi";
 
 const MINT_PRICE = 0.0011;
 const MAX_PER_WALLET = 30;
 
 export function MintSection() {
   const { address, isConnected } = useAccount();
+  const chainId = useChainId();
+  const { switchChain, isPending: isSwitching } = useSwitchChain();
   const [quantity, setQuantity] = useState(1);
+
+  const isWrongChain = isConnected && chainId !== base.id;
 
   const { data: mintInfo, refetch: refetchMintInfo } = useReadContract({
     address: CONTRACT_ADDRESSES.mintContract,
@@ -47,7 +54,7 @@ export function MintSection() {
   });
 
   const handleMint = useCallback(() => {
-    if (!isConnected || !mintActive) return;
+    if (!isConnected || !mintActive || isWrongChain) return;
     const cost = parseEther((MINT_PRICE * quantity).toFixed(6));
     writeContract({
       address: CONTRACT_ADDRESSES.mintContract,
@@ -56,7 +63,7 @@ export function MintSection() {
       args: [BigInt(quantity)],
       value: cost,
     });
-  }, [isConnected, mintActive, quantity, writeContract]);
+  }, [isConnected, mintActive, isWrongChain, quantity, writeContract]);
 
   const handleSuccess = useCallback(() => {
     refetchMintInfo();
@@ -176,6 +183,17 @@ export function MintSection() {
               <div className="flex justify-center">
                 <ConnectButton label="Connect to Mint" />
               </div>
+            ) : isWrongChain ? (
+              <motion.button
+                onClick={() => switchChain({ chainId: base.id })}
+                disabled={isSwitching}
+                className="w-full py-4 rounded-xl font-black text-lg bg-wiki-orange/20 border border-wiki-orange/40 text-wiki-orange hover:bg-wiki-orange/30 disabled:opacity-50 transition-all flex items-center justify-center gap-2"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <AlertTriangle size={20} />
+                {isSwitching ? "Switching to Base..." : "Switch to Base Chain"}
+              </motion.button>
             ) : (
               <AnimatePresence mode="wait">
                 {isSuccess ? (

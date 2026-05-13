@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const features = [
   {
     title: "FAIR LAUNCH",
-    description: "No presale, no VC round. Every $WIKI entering circulation is minted through the public Founder Pass — fully on-chain and verifiable from day one.",
+    description: "No presale, no VC round, no team allocation. 100 billion $WIKI launched 100% on LP via bankr.bot — fully on-chain and verifiable from day one.",
     color: "from-wiki-yellow to-wiki-orange",
     border: "hover:border-wiki-yellow/40",
     glow: "group-hover:text-wiki-yellow",
@@ -20,7 +20,7 @@ const features = [
   },
   {
     title: "BASE NETWORK",
-    description: "Built on Coinbase's Base chain — fast, cheap, and Ethereum-compatible. Connect with MetaMask or Coinbase Wallet and mint in seconds.",
+    description: "Built on Coinbase's Base chain — fast, cheap, and Ethereum-compatible. Connect with MetaMask or Coinbase Wallet and trade in seconds.",
     color: "from-wiki-green to-teal-500",
     border: "hover:border-wiki-green/40",
     glow: "group-hover:text-wiki-green",

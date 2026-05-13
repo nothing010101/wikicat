@@ -2,7 +2,6 @@ export const WIKI_TOKEN_ABI = [
   { inputs: [{ name: "initialOwner", type: "address" }], stateMutability: "nonpayable", type: "constructor" },
   { inputs: [{ name: "account", type: "address" }], name: "balanceOf", outputs: [{ name: "", type: "uint256" }], stateMutability: "view", type: "function" },
   { inputs: [], name: "totalSupply", outputs: [{ name: "", type: "uint256" }], stateMutability: "view", type: "function" },
-  { inputs: [], name: "remainingSupply", outputs: [{ name: "", type: "uint256" }], stateMutability: "view", type: "function" },
   { inputs: [], name: "name", outputs: [{ name: "", type: "string" }], stateMutability: "view", type: "function" },
   { inputs: [], name: "symbol", outputs: [{ name: "", type: "string" }], stateMutability: "view", type: "function" },
 ] as const;
@@ -10,7 +9,6 @@ export const WIKI_TOKEN_ABI = [
 export const FOUNDER_NFT_ABI = [
   { inputs: [{ name: "owner", type: "address" }], name: "balanceOf", outputs: [{ name: "", type: "uint256" }], stateMutability: "view", type: "function" },
   { inputs: [], name: "totalMinted", outputs: [{ name: "", type: "uint256" }], stateMutability: "view", type: "function" },
-  { inputs: [], name: "remaining", outputs: [{ name: "", type: "uint256" }], stateMutability: "view", type: "function" },
 ] as const;
 
 export const MINT_CONTRACT_ABI = [
@@ -46,15 +44,9 @@ export const MINT_CONTRACT_ABI = [
   { inputs: [], name: "withdraw", outputs: [], stateMutability: "nonpayable", type: "function" },
   { inputs: [{ name: "batchSize", type: "uint256" }], name: "issueRefunds", outputs: [], stateMutability: "nonpayable", type: "function" },
   {
-    inputs: [
-      { name: "offset", type: "uint256" },
-      { name: "limit", type: "uint256" },
-    ],
+    inputs: [{ name: "offset", type: "uint256" }, { name: "limit", type: "uint256" }],
     name: "getMinters",
-    outputs: [
-      { name: "list", type: "address[]" },
-      { name: "total", type: "uint256" },
-    ],
+    outputs: [{ name: "list", type: "address[]" }, { name: "total", type: "uint256" }],
     stateMutability: "view", type: "function",
   },
   {
@@ -76,11 +68,12 @@ export const MINT_CONTRACT_ABI = [
   },
 ] as const;
 
-// MintContract v3 — deployed & verified on Base Chain
-// https://basescan.org/address/0x45D8750Ae28C0875056b715497d92395FF7C8AA2#code
-// Mint active — deadline: 2026-05-15T08:30:19Z (15/5/2026 15:30 WIB)
+// Deployed & verified on Base Mainnet — May 2026
+// WikiToken:    https://basescan.org/address/0xB97f69Cb79978725E3e20e72b024639e7173A44F
+// FounderNFT:   https://basescan.org/address/0x404DE9409B77341434e95B4e502407742Edb3D59
+// MintContract: https://basescan.org/address/0xa65Bd77d0d78CB253EAd26b61Ae183c5AD09b924
 export const CONTRACT_ADDRESSES = {
-  wikiToken:    (process.env.NEXT_PUBLIC_WIKI_TOKEN_ADDRESS    || "0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef") as `0x${string}`,
-  founderNFT:   (process.env.NEXT_PUBLIC_FOUNDER_NFT_ADDRESS   || "0x5Ff980e0D8B1ED57427cb1f44039649F7910327b") as `0x${string}`,
-  mintContract: (process.env.NEXT_PUBLIC_MINT_CONTRACT_ADDRESS || "0x45D8750Ae28C0875056b715497d92395FF7C8AA2") as `0x${string}`,
+  wikiToken:    (process.env.NEXT_PUBLIC_WIKI_TOKEN_ADDRESS    || "0xB97f69Cb79978725E3e20e72b024639e7173A44F") as `0x${string}`,
+  founderNFT:   (process.env.NEXT_PUBLIC_FOUNDER_NFT_ADDRESS   || "0x404DE9409B77341434e95B4e502407742Edb3D59") as `0x${string}`,
+  mintContract: (process.env.NEXT_PUBLIC_MINT_CONTRACT_ADDRESS || "0xa65Bd77d0d78CB253EAd26b61Ae183c5AD09b924") as `0x${string}`,
 };

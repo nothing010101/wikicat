@@ -4,11 +4,11 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Litepaper — Wikicat ($WIKI)",
-  description: "Official Wikicat litepaper. Learn about the $WIKI token, Founder NFT collection, tokenomics, smart contracts, and project roadmap on Base Chain.",
+  description: "Official Wikicat litepaper. Learn about the $WIKI token, NFT rewards, tokenomics, and roadmap on Base Chain.",
   keywords: ["Wikicat", "WIKI", "litepaper", "whitepaper", "Base Chain", "tokenomics", "NFT", "ERC20"],
   openGraph: {
     title: "Wikicat ($WIKI) — Litepaper",
-    description: "Transparent documentation for the Wikicat project. Tokenomics, contracts, roadmap, and more.",
+    description: "Transparent documentation for the Wikicat project. Tokenomics, roadmap, and more.",
     type: "website",
   },
 };
@@ -16,10 +16,9 @@ export const metadata: Metadata = {
 const SECTIONS = [
   { id: "overview", label: "Overview" },
   { id: "token", label: "$WIKI Token" },
-  { id: "nft", label: "Founder NFT" },
+  { id: "nft", label: "NFT Reward" },
   { id: "tokenomics", label: "Tokenomics" },
   { id: "contracts", label: "Smart Contracts" },
-  { id: "mint", label: "Mint Mechanics" },
   { id: "roadmap", label: "Roadmap" },
   { id: "security", label: "Security" },
   { id: "disclaimer", label: "Disclaimer" },
@@ -30,7 +29,6 @@ export default function DocsPage() {
     <main className="min-h-screen bg-wiki-dark grid-bg">
       <Header />
       <div className="max-w-5xl mx-auto px-4 pt-32 pb-24">
-        {/* Header */}
         <div className="mb-12 border-b border-wiki-border pb-10">
           <div className="inline-flex items-center gap-2 bg-wiki-yellow/10 border border-wiki-yellow/20 rounded-full px-4 py-1.5 mb-6 text-xs text-wiki-yellow font-semibold uppercase tracking-widest">
             Documentation · v1.0
@@ -39,8 +37,8 @@ export default function DocsPage() {
             Wikicat <span className="gradient-text">Litepaper</span>
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl leading-relaxed">
-            A transparent overview of the Wikicat project — including the $WIKI token, Founder NFT collection,
-            tokenomics, smart contract architecture, and roadmap on Base Chain.
+            A transparent overview of the Wikicat project — including the $WIKI token, NFT reward system,
+            tokenomics, and roadmap on Base Chain.
           </p>
           <div className="flex flex-wrap gap-3 mt-6 text-xs text-gray-500">
             <span>Published: May 2026</span>
@@ -52,7 +50,6 @@ export default function DocsPage() {
         </div>
 
         <div className="flex gap-10">
-          {/* Sidebar nav — sticky */}
           <aside className="hidden md:block w-48 shrink-0">
             <div className="sticky top-28">
               <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-3">Contents</p>
@@ -67,7 +64,6 @@ export default function DocsPage() {
             </div>
           </aside>
 
-          {/* Main content */}
           <div className="flex-1 space-y-16 min-w-0">
 
             {/* 1. Overview */}
@@ -77,25 +73,24 @@ export default function DocsPage() {
               </h2>
               <div className="prose-custom space-y-4 text-gray-400 leading-relaxed">
                 <p>
-                  Wikicat ($WIKI) is a community-driven meme token and NFT project built natively on
+                  Wikicat ($WIKI) is a community-driven meme token and NFT reward project built natively on
                   <strong className="text-white"> Base Chain</strong> — Coinbase&apos;s Ethereum Layer 2 network.
                   Inspired by the cultural phenomenon of internet cats, Wikicat represents the convergence of
                   meme culture, digital ownership, and decentralized finance.
                 </p>
                 <p>
-                  The project launched with a Founder Mint event offering <strong className="text-white">5,000 unique slots</strong>,
-                  each granting one Founder Pass NFT and <strong className="text-white">1,000,000 $WIKI tokens</strong>
-                  at a price of <strong className="text-wiki-yellow">0.0011 ETH per slot</strong>.
+                  The project launches with the <strong className="text-white">$WIKI token</strong> on Base Mainnet,
+                  followed by an exclusive <strong className="text-white">NFT reward program</strong> for holders and
+                  community participants. NFT artwork is finalized and ready for distribution.
                 </p>
                 <p>
-                  All core components — the ERC20 token, ERC721 NFT collection, and minting contract —
-                  are deployed on Base Mainnet and fully verifiable on Basescan. No off-chain dependencies,
-                  no admin keys with unrestricted minting authority beyond the defined allocation schedule.
+                  The ERC20 token contract is deployed on Base Mainnet and fully verifiable on Basescan.
+                  No off-chain dependencies, no admin keys with unrestricted minting authority beyond the defined allocation schedule.
                 </p>
                 <div className="bg-wiki-card border border-wiki-border rounded-xl p-4 mt-4">
                   <p className="text-xs text-gray-500 uppercase tracking-widest mb-2 font-semibold">Mission</p>
                   <p className="text-white font-medium">
-                    To build the most recognized meme token on Base — with real on-chain utility, a passionate community,
+                    To build the most recognized meme token on Base — with real on-chain NFT rewards, a passionate community,
                     and transparent, verifiable tokenomics from day one.
                   </p>
                 </div>
@@ -137,27 +132,26 @@ export default function DocsPage() {
               </div>
             </section>
 
-            {/* 3. Founder NFT */}
+            {/* 3. NFT Reward */}
             <section id="nft">
               <h2 className="text-2xl font-black text-white mb-6 flex items-center gap-3">
-                <span className="text-wiki-yellow text-lg">03</span> Founder NFT Collection
+                <span className="text-wiki-yellow text-lg">03</span> NFT Reward Program
               </h2>
               <div className="space-y-4 text-gray-400 leading-relaxed">
                 <p>
-                  The Wikicat Founder Pass is an ERC721 NFT collection with a maximum supply of
-                  <strong className="text-white"> 5,000 unique tokens</strong>. Each NFT serves as proof of
-                  founding membership and grants the holder a share of the initial $WIKI token allocation.
+                  The Wikicat NFT collection features unique on-chain artwork, distributed exclusively as
+                  <strong className="text-white"> rewards</strong> to $WIKI holders and community participants —
+                  not through a direct purchase. This aligns incentives: the more you participate,
+                  the more you earn.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 mt-6">
                   {[
-                    { label: "Collection Name", value: "Wikicat Founder Pass" },
+                    { label: "Collection Name", value: "Wikicat NFT" },
                     { label: "Standard", value: "ERC721" },
-                    { label: "Max Supply", value: "5,000" },
                     { label: "Network", value: "Base Mainnet" },
-                    { label: "Mint Price", value: "0.0011 ETH / slot" },
-                    { label: "Per Mint", value: "1 NFT + 1,000,000 $WIKI" },
-                    { label: "Max Per Wallet", value: "20 slots" },
-                    { label: "Metadata", value: "On-chain / IPFS" },
+                    { label: "Distribution", value: "Reward-based (not for direct sale)" },
+                    { label: "Artwork Status", value: "Finalized & ready" },
+                    { label: "Tradeable", value: "Yes — any ERC-721 marketplace" },
                   ].map((item) => (
                     <div key={item.label} className="bg-wiki-card border border-wiki-border rounded-xl p-4">
                       <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">{item.label}</p>
@@ -166,9 +160,9 @@ export default function DocsPage() {
                   ))}
                 </div>
                 <p className="mt-4">
-                  The NFT artwork features unique Wikicat character variations. Each Founder Pass
-                  holder is recognized as an early supporter and will be prioritized in future community
-                  initiatives, allowlists, and governance proposals.
+                  Each Wikicat NFT holder is recognized as an early supporter and will be prioritized in future community
+                  initiatives, allowlists, and governance proposals. NFTs earned as rewards can be held, traded,
+                  or listed on any compatible marketplace.
                 </p>
               </div>
             </section>
@@ -181,12 +175,11 @@ export default function DocsPage() {
               <div className="space-y-4 text-gray-400 leading-relaxed">
                 <p>
                   The total supply of $WIKI is fixed at <strong className="text-white">10,000,000,000 tokens (10 Billion)</strong>.
-                  Distribution is designed to reward early community members while maintaining long-term
-                  project sustainability.
+                  Distribution is designed to reward the community while maintaining long-term project sustainability.
                 </p>
                 <div className="space-y-3 mt-6">
                   {[
-                    { label: "Founder Mint (Community)", pct: "50%", amount: "5,000,000,000", color: "bg-wiki-yellow", desc: "1,000,000 $WIKI per mint slot × 5,000 slots. Distributed immediately upon mint." },
+                    { label: "Community & NFT Rewards", pct: "50%", amount: "5,000,000,000", color: "bg-wiki-yellow", desc: "Distributed to $WIKI holders and participants through the NFT reward program and community initiatives." },
                     { label: "Liquidity & Ecosystem", pct: "40%", amount: "4,000,000,000", color: "bg-wiki-purple", desc: "Reserved for DEX liquidity pools, ecosystem grants, marketing, and partnerships." },
                     { label: "Treasury", pct: "8%", amount: "800,000,000", color: "bg-blue-500", desc: "Long-term project treasury. Locked 24 months, released monthly in linear vesting." },
                     { label: "Team", pct: "2%", amount: "200,000,000", color: "bg-wiki-green", desc: "Core team allocation. Locked 12 months, released monthly in linear vesting." },
@@ -226,7 +219,7 @@ export default function DocsPage() {
               </h2>
               <div className="space-y-4 text-gray-400 leading-relaxed">
                 <p>
-                  All Wikicat contracts are deployed on Base Mainnet and publicly verifiable.
+                  The Wikicat $WIKI token contract is deployed on Base Mainnet and publicly verifiable.
                   Contract source code is verified on Basescan.
                 </p>
                 <div className="space-y-4 mt-4">
@@ -237,20 +230,6 @@ export default function DocsPage() {
                       address: "0xB97f69Cb79978725E3e20e72b024639e7173A44F",
                       link: "https://basescan.org/token/0xB97f69Cb79978725E3e20e72b024639e7173A44F",
                       desc: "The primary fungible token contract. Handles minting, transfers, and burning of $WIKI."
-                    },
-                    {
-                      name: "Founder Pass NFT Contract",
-                      standard: "ERC721",
-                      address: "0x404de9409b77341434e95b4e502407742edb3d59",
-                      link: "https://basescan.org/address/0x404de9409b77341434e95b4e502407742edb3d59",
-                      desc: "The NFT contract for the Founder Pass collection. Issues one NFT per minted slot."
-                    },
-                    {
-                      name: "Mint Contract",
-                      standard: "Custom",
-                      address: "0xa65Bd77d0d78CB253EAd26b61Ae183c5AD09b924",
-                      link: "https://basescan.org/address/0xa65Bd77d0d78CB253EAd26b61Ae183c5AD09b924",
-                      desc: "Orchestrates the minting process — accepts ETH, triggers NFT mint, and distributes $WIKI to buyers."
                     },
                   ].map((c) => (
                     <div key={c.name} className="bg-wiki-card border border-wiki-border rounded-xl p-5">
@@ -271,60 +250,17 @@ export default function DocsPage() {
                 </div>
                 <div className="bg-wiki-card border border-wiki-border rounded-xl p-4 mt-4">
                   <p className="text-sm text-gray-400">
-                    <strong className="text-white">Contract Migration Notice:</strong> An earlier version of the minting
-                    contract was deprecated prior to public launch. All users who interacted with the previous
-                    contract were fully compensated with equivalent $WIKI tokens and Founder Pass NFTs
-                    before the current contracts went live.
+                    <strong className="text-white">Coming Soon:</strong> NFT reward contract details will be
+                    published here once the reward system launches. All contracts will be fully verified on Basescan.
                   </p>
                 </div>
               </div>
             </section>
 
-            {/* 6. Mint Mechanics */}
-            <section id="mint">
-              <h2 className="text-2xl font-black text-white mb-6 flex items-center gap-3">
-                <span className="text-wiki-yellow text-lg">06</span> Mint Mechanics
-              </h2>
-              <div className="space-y-4 text-gray-400 leading-relaxed">
-                <p>
-                  The Wikicat Founder Mint operates on a first-come, first-served basis through
-                  the Mint Contract on Base Mainnet.
-                </p>
-                <div className="space-y-3 mt-4">
-                  {[
-                    { step: "1", title: "Connect Wallet", desc: "Connect a Base-compatible wallet (e.g. MetaMask, Coinbase Wallet) to the Wikicat mint page." },
-                    { step: "2", title: "Select Quantity", desc: "Choose the number of slots to mint (minimum 1, maximum 20 per wallet). Each slot costs 0.0011 ETH." },
-                    { step: "3", title: "Confirm Transaction", desc: "Approve the transaction on-chain. The smart contract automatically mints your NFT and transfers 1,000,000 $WIKI per slot." },
-                    { step: "4", title: "Receive Assets", desc: "Your Founder Pass NFT and $WIKI tokens arrive in your wallet within the same transaction block." },
-                  ].map((s) => (
-                    <div key={s.step} className="flex gap-4 bg-wiki-card border border-wiki-border rounded-xl p-4">
-                      <div className="w-8 h-8 rounded-full bg-wiki-yellow/10 border border-wiki-yellow/30 text-wiki-yellow font-black text-sm flex items-center justify-center shrink-0">{s.step}</div>
-                      <div>
-                        <p className="text-white font-semibold mb-1">{s.title}</p>
-                        <p className="text-sm text-gray-500">{s.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="grid sm:grid-cols-3 gap-4 mt-6">
-                  {[
-                    { label: "Price", value: "0.0011 ETH / slot" },
-                    { label: "Total Slots", value: "5,000" },
-                    { label: "Max per Wallet", value: "20 slots" },
-                  ].map((item) => (
-                    <div key={item.label} className="bg-wiki-card border border-wiki-border rounded-xl p-4 text-center">
-                      <p className="text-wiki-yellow font-black text-xl">{item.value}</p>
-                      <p className="text-xs text-gray-500 mt-1">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* 7. Roadmap */}
+            {/* 6. Roadmap */}
             <section id="roadmap">
               <h2 className="text-2xl font-black text-white mb-6 flex items-center gap-3">
-                <span className="text-wiki-yellow text-lg">07</span> Roadmap
+                <span className="text-wiki-yellow text-lg">06</span> Roadmap
               </h2>
               <div className="space-y-4 text-gray-400 leading-relaxed">
                 <div className="space-y-4">
@@ -332,22 +268,22 @@ export default function DocsPage() {
                     {
                       phase: "Phase 1 — Foundation",
                       status: "complete",
-                      items: ["Token contract deployed on Base Mainnet", "Founder NFT contract deployed", "Mint contract deployed and activated", "Website launched at wikicat.xyz", "Community airdrop for early supporters completed"],
+                      items: ["Token contract deployed on Base Mainnet", "Website launched at wikicat.xyz", "NFT artwork finalized", "Community building initiated", "Basescan contract verification"],
                     },
                     {
-                      phase: "Phase 2 — Growth",
+                      phase: "Phase 2 — $WIKI Launch",
                       status: "active",
-                      items: ["Founder Mint open to public (5,000 slots)", "Team & Treasury token vesting initiated", "Community vote on key project decisions", "Social media presence and community building", "Basescan contract verification"],
+                      items: ["$WIKI token public launch on Base", "Team & Treasury token vesting initiated", "Community airdrop and reward events", "Social media presence and community growth", "DEX listing"],
                     },
                     {
-                      phase: "Phase 3 — Ecosystem",
+                      phase: "Phase 3 — NFT Rewards",
                       status: "upcoming",
-                      items: ["DEX liquidity pool launch (e.g. Uniswap on Base)", "$WIKI token listing on aggregators (CoinGecko, CMC)", "NFT marketplace integration (OpenSea)", "Governance framework rollout", "Ecosystem grants program"],
+                      items: ["NFT reward system launch for $WIKI holders", "NFT marketplace integration (OpenSea, etc.)", "Community reward campaigns", "$WIKI token listing on aggregators (CoinGecko, CMC)", "Governance framework rollout"],
                     },
                     {
                       phase: "Phase 4 — Expansion",
                       status: "upcoming",
-                      items: ["Cross-chain bridge exploration", "Strategic partnerships with Base ecosystem projects", "NFT utility features", "Community-driven development proposals", "Long-term DAO transition"],
+                      items: ["Cross-chain bridge exploration", "Strategic partnerships with Base ecosystem projects", "Expanded NFT utility features", "Community-driven development proposals", "Long-term DAO transition"],
                     },
                   ].map((phase) => (
                     <div key={phase.phase} className="bg-wiki-card border border-wiki-border rounded-xl p-5">
@@ -372,10 +308,10 @@ export default function DocsPage() {
               </div>
             </section>
 
-            {/* 8. Security */}
+            {/* 7. Security */}
             <section id="security">
               <h2 className="text-2xl font-black text-white mb-6 flex items-center gap-3">
-                <span className="text-wiki-yellow text-lg">08</span> Security
+                <span className="text-wiki-yellow text-lg">07</span> Security
               </h2>
               <div className="space-y-4 text-gray-400 leading-relaxed">
                 <p>
@@ -389,7 +325,7 @@ export default function DocsPage() {
                     { title: "Vesting Enforced On-chain", desc: "Team and Treasury allocations are subject to smart contract vesting schedules. Premature withdrawal is not possible." },
                     { title: "No Hidden Minting", desc: "All minted token quantities are publicly announced and cross-referenced with on-chain transactions on Basescan." },
                     { title: "Contract Verification", desc: "All smart contracts are verified on Basescan, allowing anyone to inspect the source code before interacting." },
-                    { title: "Migration Transparency", desc: "The previous contract migration was publicly disclosed. Affected users were compensated with verifiable on-chain transfers." },
+                    { title: "NFT Reward Transparency", desc: "All NFT reward distributions will be publicly announced and verifiable on-chain before and after execution." },
                   ].map((item) => (
                     <div key={item.title} className="bg-wiki-card border border-wiki-border rounded-xl p-4">
                       <p className="text-white font-semibold mb-2">{item.title}</p>
@@ -400,17 +336,17 @@ export default function DocsPage() {
                 <div className="bg-wiki-card border border-wiki-yellow/20 rounded-xl p-4 mt-4">
                   <p className="text-sm text-gray-400">
                     <strong className="text-wiki-yellow">Transparency commitment:</strong> The Wikicat team is committed to
-                    publicly disclosing all significant on-chain actions including large token transfers, contract upgrades,
+                    publicly disclosing all significant on-chain actions including large token transfers, NFT reward distributions,
                     and treasury movements via official social channels before or immediately after execution.
                   </p>
                 </div>
               </div>
             </section>
 
-            {/* 9. Disclaimer */}
+            {/* 8. Disclaimer */}
             <section id="disclaimer">
               <h2 className="text-2xl font-black text-white mb-6 flex items-center gap-3">
-                <span className="text-wiki-yellow text-lg">09</span> Disclaimer
+                <span className="text-wiki-yellow text-lg">08</span> Disclaimer
               </h2>
               <div className="space-y-4 text-gray-400 text-sm leading-relaxed">
                 <p>
@@ -420,16 +356,13 @@ export default function DocsPage() {
                 </p>
                 <p>
                   $WIKI is a community meme token with no guaranteed value or utility beyond what the community
-                  collectively creates. The value of $WIKI and Founder Pass NFTs may fluctuate significantly.
-                  Participation in the Founder Mint involves risk, including the possible loss of the ETH used to mint.
+                  collectively creates. The value of $WIKI and Wikicat NFTs may fluctuate significantly.
+                  Users are responsible for understanding and complying with the laws and regulations applicable
+                  to cryptocurrency and NFT transactions in their respective jurisdictions.
                 </p>
                 <p>
                   The roadmap outlined in this document represents the current intentions of the project team and
                   is subject to change. No guarantees are made regarding the completion of any roadmap milestone.
-                </p>
-                <p>
-                  Users are responsible for understanding and complying with the laws and regulations applicable
-                  to cryptocurrency and NFT transactions in their respective jurisdictions.
                 </p>
                 <div className="bg-wiki-card border border-wiki-border rounded-xl p-4 mt-4">
                   <p className="text-gray-500">

@@ -79,8 +79,8 @@ export default function DocsPage() {
                   meme culture, digital ownership, and decentralized finance.
                 </p>
                 <p>
-                  100 billion $WIKI tokens are launched directly to liquidity via{" "}
-                  <strong className="text-white">bankr.bot</strong> — no presale, no team cut, no treasury.
+                  1 billion $WIKI tokens are launched directly to liquidity via{" "}
+                  <strong className="text-white">ape.store</strong> — no presale, no team cut, no treasury.
                   After launch, $WIKI holders earn exclusive{" "}
                   <strong className="text-white">Wikicat NFTs</strong> as rewards, with the option to also
                   purchase NFTs directly via the website.
@@ -115,10 +115,10 @@ export default function DocsPage() {
                     { label: "Symbol", value: "$WIKI" },
                     { label: "Standard", value: "ERC20" },
                     { label: "Network", value: "Base Mainnet" },
-                    { label: "Total Supply", value: "100,000,000,000" },
+                    { label: "Total Supply", value: "1,000,000,000" },
                     { label: "Decimals", value: "18" },
                     { label: "Burnable", value: "Yes" },
-                    { label: "Launch", value: "100% LP via bankr.bot" },
+                    { label: "Launch", value: "100% LP via ape.store" },
                   ].map((item) => (
                     <div key={item.label} className="bg-wiki-card border border-wiki-border rounded-xl p-4">
                       <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">{item.label}</p>
@@ -174,12 +174,12 @@ export default function DocsPage() {
               </h2>
               <div className="space-y-4 text-gray-400 leading-relaxed">
                 <p>
-                  The total supply of $WIKI is <strong className="text-white">100,000,000,000 tokens (100 Billion)</strong>.
+                  The total supply of $WIKI is <strong className="text-white">1,000,000,000 tokens (1 Billion)</strong>.
                   100% of the supply is launched directly to liquidity — no team allocation, no treasury, no presale.
                 </p>
                 <div className="space-y-3 mt-6">
                   {[
-                    { label: "LP via bankr.bot", pct: "100%", amount: "100,000,000,000", color: "bg-wiki-yellow", desc: "100% of total supply launched directly to LP via bankr.bot. No team cut. No presale. Community-owned from day one." },
+                    { label: "LP via ape.store", pct: "100%", amount: "1,000,000,000", color: "bg-wiki-yellow", desc: "100% of total supply launched directly to LP via ape.store. No team cut. No presale. Community-owned from day one." },
                   ].map((item) => (
                     <div key={item.label} className="bg-wiki-card border border-wiki-border rounded-xl p-5">
                       <div className="flex items-center justify-between mb-2">
@@ -203,7 +203,7 @@ export default function DocsPage() {
                   <p className="text-sm text-gray-400">
                     <strong className="text-wiki-yellow">Fully fair launch:</strong> No pre-mine, no presale,
                     no team wallets, no vesting schedules. Every $WIKI token is available to the public from day one
-                    through the LP on bankr.bot.
+                    through the LP on ape.store.
                   </p>
                 </div>
               </div>
@@ -215,41 +215,9 @@ export default function DocsPage() {
                 <span className="text-wiki-yellow text-lg">05</span> Smart Contracts
               </h2>
               <div className="space-y-4 text-gray-400 leading-relaxed">
-                <p>
-                  The Wikicat $WIKI token contract is deployed on Base Mainnet and publicly verifiable.
-                  Contract source code is verified on Basescan.
-                </p>
-                <div className="space-y-4 mt-4">
-                  {[
-                    {
-                      name: "$WIKI Token Contract",
-                      standard: "ERC20",
-                      address: "0xCe44930086bf38a5dcB02A6b23C7BAE4C269Cb07",
-                      link: "https://basescan.org/token/0xCe44930086bf38a5dcB02A6b23C7BAE4C269Cb07",
-                      desc: "The primary fungible token contract. Handles transfers and burning of $WIKI."
-                    },
-                  ].map((c) => (
-                    <div key={c.name} className="bg-wiki-card border border-wiki-border rounded-xl p-5">
-                      <div className="flex items-start justify-between gap-4 mb-3">
-                        <div>
-                          <p className="text-white font-bold">{c.name}</p>
-                          <span className="text-xs bg-wiki-yellow/10 text-wiki-yellow border border-wiki-yellow/20 rounded-full px-2 py-0.5 mt-1 inline-block">{c.standard}</span>
-                        </div>
-                        <a href={c.link} target="_blank" rel="noopener noreferrer"
-                          className="text-xs text-wiki-yellow hover:underline shrink-0">
-                          View on Basescan ↗
-                        </a>
-                      </div>
-                      <p className="text-xs font-mono text-gray-400 bg-wiki-dark rounded-lg px-3 py-2 mb-3 break-all">{c.address}</p>
-                      <p className="text-sm text-gray-500">{c.desc}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="bg-wiki-card border border-wiki-border rounded-xl p-4 mt-4">
-                  <p className="text-sm text-gray-400">
-                    <strong className="text-white">Coming Soon:</strong> NFT reward contract details will be
-                    published here once the reward system launches. All contracts will be fully verified on Basescan.
-                  </p>
+                <div className="bg-wiki-card border border-wiki-border rounded-xl p-6 text-center">
+                  <p className="text-wiki-yellow font-bold text-lg mb-2">Soon on ape.store</p>
+                  <p className="text-gray-400 text-sm">The $WIKI token will be available to trade on ape.store. Contract details will be published here at launch.</p>
                 </div>
               </div>
             </section>
@@ -270,7 +238,7 @@ export default function DocsPage() {
                     {
                       phase: "Phase 2 — $WIKI Launch",
                       status: "active",
-                      items: ["$WIKI token public launch via bankr.bot (100% on LP)", "Community airdrop and reward events", "Social media presence and community growth", "DEX listing and trading live"],
+                      items: ["$WIKI token public launch via ape.store (100% on LP)", "Community airdrop and reward events", "Social media presence and community growth", "DEX listing and trading live"],
                     },
                     {
                       phase: "Phase 3 — NFT Rewards",
@@ -318,7 +286,7 @@ export default function DocsPage() {
                 <div className="grid sm:grid-cols-2 gap-4 mt-4">
                   {[
                     { title: "On-chain Transparency", desc: "All token issuances, transfers, and contract calls are permanently recorded on Base Mainnet and publicly verifiable." },
-                    { title: "Supply Cap", desc: "The $WIKI token has a hard cap of 100 billion tokens enforced at the contract level. No additional tokens can be minted beyond this cap." },
+                    { title: "Supply Cap", desc: "The $WIKI token has a hard cap of 1 billion tokens enforced at the contract level. No additional tokens can be minted beyond this cap." },
                     { title: "No Team Wallets", desc: "There is no team allocation or treasury reserve. 100% of the supply is in public liquidity from launch." },
                     { title: "No Hidden Minting", desc: "All token quantities are publicly announced and cross-referenced with on-chain transactions on Basescan." },
                     { title: "Contract Verification", desc: "All smart contracts are verified on Basescan, allowing anyone to inspect the source code before interacting." },

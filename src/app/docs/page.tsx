@@ -79,13 +79,15 @@ export default function DocsPage() {
                   meme culture, digital ownership, and decentralized finance.
                 </p>
                 <p>
-                  The project launches with the <strong className="text-white">$WIKI token</strong> on Base Mainnet,
-                  followed by an exclusive <strong className="text-white">NFT reward program</strong> for holders and
-                  community participants. NFT artwork is finalized and ready for distribution.
+                  100 billion $WIKI tokens are launched directly to liquidity via{" "}
+                  <strong className="text-white">bankr.bot</strong> — no presale, no team cut, no treasury.
+                  After launch, $WIKI holders earn exclusive{" "}
+                  <strong className="text-white">Wikicat NFTs</strong> as rewards, with the option to also
+                  purchase NFTs directly via the website.
                 </p>
                 <p>
                   The ERC20 token contract is deployed on Base Mainnet and fully verifiable on Basescan.
-                  No off-chain dependencies, no admin keys with unrestricted minting authority beyond the defined allocation schedule.
+                  No off-chain dependencies, no admin keys with unrestricted minting authority.
                 </p>
                 <div className="bg-wiki-card border border-wiki-border rounded-xl p-4 mt-4">
                   <p className="text-xs text-gray-500 uppercase tracking-widest mb-2 font-semibold">Mission</p>
@@ -113,10 +115,10 @@ export default function DocsPage() {
                     { label: "Symbol", value: "$WIKI" },
                     { label: "Standard", value: "ERC20" },
                     { label: "Network", value: "Base Mainnet" },
-                    { label: "Total Supply", value: "10,000,000,000" },
+                    { label: "Total Supply", value: "100,000,000,000" },
                     { label: "Decimals", value: "18" },
-                    { label: "Mintable", value: "Yes (owner-controlled, supply-capped)" },
                     { label: "Burnable", value: "Yes" },
+                    { label: "Launch", value: "100% LP via bankr.bot" },
                   ].map((item) => (
                     <div key={item.label} className="bg-wiki-card border border-wiki-border rounded-xl p-4">
                       <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">{item.label}</p>
@@ -125,9 +127,8 @@ export default function DocsPage() {
                   ))}
                 </div>
                 <p className="mt-4">
-                  The token contract address is publicly verified on Basescan. Minting is controlled by
-                  a designated admin wallet and bounded by the total supply cap of 10 billion tokens.
-                  No wallet can mint beyond the defined cap.
+                  The token contract address is publicly verified on Basescan. The entire supply is launched
+                  directly to liquidity — no team wallet, no treasury reserve. The community owns $WIKI from day one.
                 </p>
               </div>
             </section>
@@ -140,16 +141,15 @@ export default function DocsPage() {
               <div className="space-y-4 text-gray-400 leading-relaxed">
                 <p>
                   The Wikicat NFT collection features unique on-chain artwork, distributed exclusively as
-                  <strong className="text-white"> rewards</strong> to $WIKI holders and community participants —
-                  not through a direct purchase. This aligns incentives: the more you participate,
-                  the more you earn.
+                  <strong className="text-white"> rewards</strong> to $WIKI holders and community participants.
+                  Holders will be airdropped NFTs, and will also be able to purchase them directly via the website.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 mt-6">
                   {[
                     { label: "Collection Name", value: "Wikicat NFT" },
                     { label: "Standard", value: "ERC721" },
                     { label: "Network", value: "Base Mainnet" },
-                    { label: "Distribution", value: "Reward-based (not for direct sale)" },
+                    { label: "Distribution", value: "Airdrop to holders + buy via web" },
                     { label: "Artwork Status", value: "Finalized & ready" },
                     { label: "Tradeable", value: "Yes — any ERC-721 marketplace" },
                   ].map((item) => (
@@ -161,7 +161,7 @@ export default function DocsPage() {
                 </div>
                 <p className="mt-4">
                   Each Wikicat NFT holder is recognized as an early supporter and will be prioritized in future community
-                  initiatives, allowlists, and governance proposals. NFTs earned as rewards can be held, traded,
+                  initiatives, allowlists, and governance proposals. NFTs can be held, traded,
                   or listed on any compatible marketplace.
                 </p>
               </div>
@@ -174,15 +174,12 @@ export default function DocsPage() {
               </h2>
               <div className="space-y-4 text-gray-400 leading-relaxed">
                 <p>
-                  The total supply of $WIKI is fixed at <strong className="text-white">10,000,000,000 tokens (10 Billion)</strong>.
-                  Distribution is designed to reward the community while maintaining long-term project sustainability.
+                  The total supply of $WIKI is <strong className="text-white">100,000,000,000 tokens (100 Billion)</strong>.
+                  100% of the supply is launched directly to liquidity — no team allocation, no treasury, no presale.
                 </p>
                 <div className="space-y-3 mt-6">
                   {[
-                    { label: "Community & NFT Rewards", pct: "50%", amount: "5,000,000,000", color: "bg-wiki-yellow", desc: "Distributed to $WIKI holders and participants through the NFT reward program and community initiatives." },
-                    { label: "Liquidity & Ecosystem", pct: "40%", amount: "4,000,000,000", color: "bg-wiki-purple", desc: "Reserved for DEX liquidity pools, ecosystem grants, marketing, and partnerships." },
-                    { label: "Treasury", pct: "8%", amount: "800,000,000", color: "bg-blue-500", desc: "Long-term project treasury. Locked 24 months, released monthly in linear vesting." },
-                    { label: "Team", pct: "2%", amount: "200,000,000", color: "bg-wiki-green", desc: "Core team allocation. Locked 12 months, released monthly in linear vesting." },
+                    { label: "LP via bankr.bot", pct: "100%", amount: "100,000,000,000", color: "bg-wiki-yellow", desc: "100% of total supply launched directly to LP via bankr.bot. No team cut. No presale. Community-owned from day one." },
                   ].map((item) => (
                     <div key={item.label} className="bg-wiki-card border border-wiki-border rounded-xl p-5">
                       <div className="flex items-center justify-between mb-2">
@@ -204,9 +201,9 @@ export default function DocsPage() {
                 </div>
                 <div className="bg-wiki-card border border-wiki-yellow/20 rounded-xl p-4 mt-4">
                   <p className="text-sm text-gray-400">
-                    <strong className="text-wiki-yellow">Note on vesting:</strong> Team and Treasury allocations
-                    are subject to on-chain vesting schedules. Tokens cannot be accessed before the lock period
-                    ends, and monthly releases are enforced at the smart contract level.
+                    <strong className="text-wiki-yellow">Fully fair launch:</strong> No pre-mine, no presale,
+                    no team wallets, no vesting schedules. Every $WIKI token is available to the public from day one
+                    through the LP on bankr.bot.
                   </p>
                 </div>
               </div>
@@ -229,7 +226,7 @@ export default function DocsPage() {
                       standard: "ERC20",
                       address: "0xB97f69Cb79978725E3e20e72b024639e7173A44F",
                       link: "https://basescan.org/token/0xB97f69Cb79978725E3e20e72b024639e7173A44F",
-                      desc: "The primary fungible token contract. Handles minting, transfers, and burning of $WIKI."
+                      desc: "The primary fungible token contract. Handles transfers and burning of $WIKI."
                     },
                   ].map((c) => (
                     <div key={c.name} className="bg-wiki-card border border-wiki-border rounded-xl p-5">
@@ -273,12 +270,12 @@ export default function DocsPage() {
                     {
                       phase: "Phase 2 — $WIKI Launch",
                       status: "active",
-                      items: ["$WIKI token public launch on Base", "Team & Treasury token vesting initiated", "Community airdrop and reward events", "Social media presence and community growth", "DEX listing"],
+                      items: ["$WIKI token public launch via bankr.bot (100% on LP)", "Community airdrop and reward events", "Social media presence and community growth", "DEX listing and trading live"],
                     },
                     {
                       phase: "Phase 3 — NFT Rewards",
                       status: "upcoming",
-                      items: ["NFT reward system launch for $WIKI holders", "NFT marketplace integration (OpenSea, etc.)", "Community reward campaigns", "$WIKI token listing on aggregators (CoinGecko, CMC)", "Governance framework rollout"],
+                      items: ["NFT airdrop to qualifying $WIKI holders", "NFT purchase via Wikicat website", "NFT marketplace integration (OpenSea, etc.)", "$WIKI token listing on aggregators (CoinGecko, CMC)", "Governance framework rollout"],
                     },
                     {
                       phase: "Phase 4 — Expansion",
@@ -321,11 +318,11 @@ export default function DocsPage() {
                 <div className="grid sm:grid-cols-2 gap-4 mt-4">
                   {[
                     { title: "On-chain Transparency", desc: "All token issuances, transfers, and contract calls are permanently recorded on Base Mainnet and publicly verifiable." },
-                    { title: "Supply Cap", desc: "The $WIKI token has a hard cap of 10 billion tokens enforced at the contract level. No additional tokens can be minted beyond this cap." },
-                    { title: "Vesting Enforced On-chain", desc: "Team and Treasury allocations are subject to smart contract vesting schedules. Premature withdrawal is not possible." },
-                    { title: "No Hidden Minting", desc: "All minted token quantities are publicly announced and cross-referenced with on-chain transactions on Basescan." },
+                    { title: "Supply Cap", desc: "The $WIKI token has a hard cap of 100 billion tokens enforced at the contract level. No additional tokens can be minted beyond this cap." },
+                    { title: "No Team Wallets", desc: "There is no team allocation or treasury reserve. 100% of the supply is in public liquidity from launch." },
+                    { title: "No Hidden Minting", desc: "All token quantities are publicly announced and cross-referenced with on-chain transactions on Basescan." },
                     { title: "Contract Verification", desc: "All smart contracts are verified on Basescan, allowing anyone to inspect the source code before interacting." },
-                    { title: "NFT Reward Transparency", desc: "All NFT reward distributions will be publicly announced and verifiable on-chain before and after execution." },
+                    { title: "NFT Reward Transparency", desc: "All NFT airdrop distributions and web purchases will be publicly announced and verifiable on-chain." },
                   ].map((item) => (
                     <div key={item.title} className="bg-wiki-card border border-wiki-border rounded-xl p-4">
                       <p className="text-white font-semibold mb-2">{item.title}</p>
@@ -336,8 +333,8 @@ export default function DocsPage() {
                 <div className="bg-wiki-card border border-wiki-yellow/20 rounded-xl p-4 mt-4">
                   <p className="text-sm text-gray-400">
                     <strong className="text-wiki-yellow">Transparency commitment:</strong> The Wikicat team is committed to
-                    publicly disclosing all significant on-chain actions including large token transfers, NFT reward distributions,
-                    and treasury movements via official social channels before or immediately after execution.
+                    publicly disclosing all significant on-chain actions including NFT airdrop distributions
+                    and any contract deployments via official social channels before or immediately after execution.
                   </p>
                 </div>
               </div>

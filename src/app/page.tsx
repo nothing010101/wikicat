@@ -1,6 +1,7 @@
 "use client";
 import { LandingHeader } from "@/components/landing/LandingHeader";
 import { Hero } from "@/components/landing/Hero";
+import { MintCountdown } from "@/components/MintCountdown";
 import { WhatIsWiki } from "@/components/landing/WhatIsWiki";
 import { Features } from "@/components/landing/Features";
 import { LandingTokenomics } from "@/components/landing/LandingTokenomics";
@@ -12,6 +13,7 @@ export default function LandingPage() {
     <main className="min-h-screen overflow-x-hidden bg-wiki-dark grid-bg">
       <LandingHeader />
       <Hero />
+      <MintCountdown />
       <WhatIsWiki />
       <Features />
       <LandingTokenomics />

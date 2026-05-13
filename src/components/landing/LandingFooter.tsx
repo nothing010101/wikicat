@@ -15,15 +15,12 @@ export function LandingFooter() {
           </a>
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             {[
-              { href: "/mint", label: "Mint" },
               { href: "#about", label: "About" },
               { href: "#tokenomics", label: "Tokenomics" },
               { href: "#faq", label: "FAQ" },
-              { href: "https://basescan.org/token/0xB97f69Cb79978725E3e20e72b024639e7173A44F", label: "Basescan", ext: true },
+              { href: "/docs", label: "Docs" },
             ].map((link) => (
               <a key={link.label} href={link.href}
-                target={link.ext ? "_blank" : undefined}
-                rel={link.ext ? "noopener noreferrer" : undefined}
                 className="text-gray-400 hover:text-wiki-yellow transition-colors font-medium">
                 {link.label}
               </a>
@@ -37,14 +34,8 @@ export function LandingFooter() {
             </a>
           </div>
         </div>
-        <div className="mt-8 pt-6 border-t border-wiki-border text-center space-y-1">
-          <p className="text-gray-600 text-xs">$WIKI Token Contract (Base Mainnet)</p>
-          <a href="https://basescan.org/token/0xB97f69Cb79978725E3e20e72b024639e7173A44F"
-            target="_blank" rel="noopener noreferrer"
-            className="text-gray-500 hover:text-wiki-yellow text-xs font-mono transition-colors">
-            0xB97f69Cb79978725E3e20e72b024639e7173A44F
-          </a>
-          <p className="text-gray-700 text-xs mt-4">© 2026 Wikicat. All rights reserved</p>
+        <div className="mt-8 pt-6 border-t border-wiki-border text-center">
+          <p className="text-gray-700 text-xs">© 2026 Wikicat. All rights reserved</p>
         </div>
       </div>
     </footer>

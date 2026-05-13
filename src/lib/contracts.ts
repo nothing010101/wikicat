@@ -65,8 +65,10 @@ export const MINT_CONTRACT_ABI = [
   },
 ] as const;
 
+// ✅ MintContract v2 — deployed & verified on Base Chain
+// https://basescan.org/address/0xd2a0240Ab057C9155eeC5f8f689c012917443B92#code
 export const CONTRACT_ADDRESSES = {
   wikiToken:    (process.env.NEXT_PUBLIC_WIKI_TOKEN_ADDRESS    || "0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef") as `0x${string}`,
   founderNFT:   (process.env.NEXT_PUBLIC_FOUNDER_NFT_ADDRESS   || "0x5Ff980e0D8B1ED57427cb1f44039649F7910327b") as `0x${string}`,
-  mintContract: (process.env.NEXT_PUBLIC_MINT_CONTRACT_ADDRESS || "0x2E5562852FF41066120aE9289adB2f571e1FcC6B") as `0x${string}`,
+  mintContract: (process.env.NEXT_PUBLIC_MINT_CONTRACT_ADDRESS || "0xd2a0240Ab057C9155eeC5f8f689c012917443B92") as `0x${string}`,
 };

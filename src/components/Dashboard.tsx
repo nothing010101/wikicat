@@ -4,9 +4,8 @@ import { motion } from "framer-motion";
 import { useAccount, useReadContract } from "wagmi";
 import { ConnectButton } from "@/components/ConnectButton";
 import { formatEther } from "viem";
-import { LayoutDashboard, Coins, ImageIcon, BarChart3 } from "lucide-react";
+import { LayoutDashboard, Coins, ImageIcon } from "lucide-react";
 import {
-  MINT_CONTRACT_ABI,
   WIKI_TOKEN_ABI,
   FOUNDER_NFT_ABI,
   CONTRACT_ADDRESSES,
@@ -14,14 +13,6 @@ import {
 
 export function Dashboard() {
   const { address, isConnected } = useAccount();
-
-  const { data: walletSlots } = useReadContract({
-    address: CONTRACT_ADDRESSES.mintContract,
-    abi: MINT_CONTRACT_ABI,
-    functionName: "walletSlots",
-    args: address ? [address] : undefined,
-    query: { enabled: !!address },
-  });
 
   const { data: wikiBalance } = useReadContract({
     address: CONTRACT_ADDRESSES.wikiToken,
@@ -39,16 +30,6 @@ export function Dashboard() {
     query: { enabled: !!address },
   });
 
-  const { data: walletRem } = useReadContract({
-    address: CONTRACT_ADDRESSES.mintContract,
-    abi: MINT_CONTRACT_ABI,
-    functionName: "walletRemaining",
-    args: address ? [address] : undefined,
-    query: { enabled: !!address },
-  });
-
-  const slotsUsed = walletSlots ? Number(walletSlots) : 0;
-  const slotsLeft = walletRem ? Number(walletRem) : 30;
   const wiki = wikiBalance
     ? Number(formatEther(wikiBalance)).toLocaleString(undefined, {
         maximumFractionDigits: 0,
@@ -86,7 +67,7 @@ export function Dashboard() {
               Wallet Not Connected
             </h3>
             <p className="text-gray-500 mb-6">
-              Connect your wallet to view your holdings and mint status.
+              Connect your wallet to view your $WIKI and NFT holdings.
             </p>
             <div className="flex justify-center">
               <ConnectButton label="Connect Wallet" />
@@ -117,7 +98,7 @@ export function Dashboard() {
               </div>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 gap-4">
               {[
                 {
                   icon: Coins,
@@ -128,24 +109,10 @@ export function Dashboard() {
                 },
                 {
                   icon: ImageIcon,
-                  label: "Founder NFTs",
+                  label: "Wikicat NFTs",
                   value: nfts.toString(),
                   color: "text-wiki-green",
                   bg: "bg-wiki-green/10",
-                },
-                {
-                  icon: BarChart3,
-                  label: "Slots Minted",
-                  value: slotsUsed.toString(),
-                  color: "text-purple-400",
-                  bg: "bg-purple-400/10",
-                },
-                {
-                  icon: BarChart3,
-                  label: "Slots Remaining",
-                  value: slotsLeft.toString(),
-                  color: "text-wiki-orange",
-                  bg: "bg-wiki-orange/10",
                 },
               ].map((card, i) => {
                 const Icon = card.icon;
@@ -176,50 +143,17 @@ export function Dashboard() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="wiki-card p-6"
+              transition={{ delay: 0.3 }}
+              className="wiki-card p-5 text-center"
             >
-              <div className="flex justify-between items-center mb-3">
-                <span className="text-sm text-gray-400 font-medium">
-                  Wallet Mint Allowance
-                </span>
-                <span className="text-white font-bold text-sm">
-                  {slotsUsed} / 30 used
-                </span>
-              </div>
-              <div className="h-2.5 bg-wiki-border rounded-full overflow-hidden">
-                <motion.div
-                  className="h-full rounded-full bg-gradient-to-r from-wiki-yellow to-wiki-orange"
-                  initial={{ width: 0 }}
-                  animate={{ width: `${(slotsUsed / 30) * 100}%` }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                />
-              </div>
-              <p className="text-xs text-gray-600 mt-2">
-                {slotsLeft > 0
-                  ? `You can mint ${slotsLeft} more slot${slotsLeft > 1 ? "s" : ""}`
-                  : "You have reached the maximum per-wallet limit."}
+              <p className="text-sm text-gray-400 mb-2">
+                Hold <span className="text-wiki-yellow font-bold">$WIKI</span> to qualify for NFT airdrops and future rewards.
               </p>
+              <a href="https://x.com/wikibasedcat" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-wiki-yellow hover:underline">
+                Follow @wikibasedcat for updates ↗
+              </a>
             </motion.div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <a
-                href={`https://basescan.org/token/${CONTRACT_ADDRESSES.wikiToken}?a=${address}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="wiki-card p-4 text-center text-sm text-gray-400 hover:text-wiki-yellow transition-colors"
-              >
-                View $WIKI on Basescan
-              </a>
-              <a
-                href={`https://opensea.io/${address}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="wiki-card p-4 text-center text-sm text-gray-400 hover:text-wiki-yellow transition-colors"
-              >
-                View NFTs on OpenSea
-              </a>
-            </div>
           </div>
         )}
       </div>

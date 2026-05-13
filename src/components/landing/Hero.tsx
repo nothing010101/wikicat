@@ -50,9 +50,9 @@ export function Hero() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="#about"
+            <a href="https://dexscreener.com/base/0x2740bc4d75aa22efd314c868b44258ec811d61b0" target="_blank" rel="noopener noreferrer"
               className="px-10 py-4 rounded-xl font-black text-xl bg-gradient-to-r from-wiki-yellow to-wiki-orange text-black hover:opacity-90 transition-all glow-yellow text-center">
-              🐱 Learn More
+              🚀 Buy $WIKI
             </a>
             <a href="#tokenomics"
               className="px-10 py-4 rounded-xl font-bold text-lg border border-wiki-border text-gray-300 hover:border-wiki-yellow/40 hover:text-wiki-yellow transition-all text-center">

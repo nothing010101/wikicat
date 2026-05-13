@@ -26,7 +26,7 @@ export function LandingFooter() {
               { href: "#about", label: "About" },
               { href: "#tokenomics", label: "Tokenomics" },
               { href: "#faq", label: "FAQ" },
-              { href: "https://basescan.org/address/0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef", label: "Basescan", ext: true },
+              { href: "https://basescan.org/token/0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef", label: "Basescan", ext: true },
             ].map((link) => (
               <a key={link.label} href={link.href}
                 target={link.ext ? "_blank" : undefined}
@@ -47,8 +47,8 @@ export function LandingFooter() {
         </div>
 
         <div className="mt-8 pt-6 border-t border-wiki-border text-center space-y-1">
-          <p className="text-gray-600 text-xs">Token Contract (Base Mainnet)</p>
-          <a href="https://basescan.org/address/0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef"
+          <p className="text-gray-600 text-xs">$WIKI Token Contract (Base Mainnet)</p>
+          <a href="https://basescan.org/token/0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef"
             target="_blank" rel="noopener noreferrer"
             className="text-gray-500 hover:text-wiki-yellow text-xs font-mono transition-colors">
             0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef

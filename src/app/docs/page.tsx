@@ -215,9 +215,26 @@ export default function DocsPage() {
                 <span className="text-wiki-yellow text-lg">05</span> Smart Contracts
               </h2>
               <div className="space-y-4 text-gray-400 leading-relaxed">
-                <div className="bg-wiki-card border border-wiki-border rounded-xl p-6 text-center">
-                  <p className="text-wiki-yellow font-bold text-lg mb-2">Soon on ape.store</p>
-                  <p className="text-gray-400 text-sm">The $WIKI token will be available to trade on ape.store. Contract details will be published here at launch.</p>
+                <div className="space-y-4">
+                  <div className="bg-wiki-card border border-wiki-yellow/30 rounded-xl p-6">
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-1 font-semibold">ERC20 Token Contract</p>
+                    <p className="text-wiki-yellow font-bold text-lg mb-2">$WIKI — Wikicat</p>
+                    <p className="font-mono text-sm text-white break-all bg-wiki-dark border border-wiki-border rounded-lg px-4 py-3 mb-4">0x2740bc4d75aa22efd314c868b44258ec811d61b0</p>
+                    <div className="flex flex-wrap gap-3">
+                      <a href="https://basescan.org/token/0x2740bc4d75aa22efd314c868b44258ec811d61b0" target="_blank" rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-wiki-dark border border-wiki-border text-sm text-gray-300 hover:border-wiki-yellow/40 hover:text-wiki-yellow transition-all">
+                        View on Basescan ↗
+                      </a>
+                      <a href="https://dexscreener.com/base/0x2740bc4d75aa22efd314c868b44258ec811d61b0" target="_blank" rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-wiki-yellow/10 border border-wiki-yellow/30 text-sm text-wiki-yellow hover:bg-wiki-yellow/20 transition-all">
+                        View on DexScreener ↗
+                      </a>
+                    </div>
+                  </div>
+                  <div className="bg-wiki-card border border-wiki-border rounded-xl p-4">
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-1 font-semibold">Network</p>
+                    <p className="text-white font-semibold">Base Mainnet (Chain ID: 8453)</p>
+                  </div>
                 </div>
               </div>
             </section>

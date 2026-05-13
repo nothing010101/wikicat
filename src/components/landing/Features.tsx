@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const features = [
   {
     title: "FAIR LAUNCH",
-    description: "No presale, no VC round, no team allocation. 100 billion $WIKI launched 100% on LP via bankr.bot — fully on-chain and verifiable from day one.",
+    description: "No presale, no VC round, no team allocation. 1 billion $WIKI launched 100% on LP via ape.store — fully on-chain and verifiable from day one.",
     color: "from-wiki-yellow to-wiki-orange",
     border: "hover:border-wiki-yellow/40",
     glow: "group-hover:text-wiki-yellow",

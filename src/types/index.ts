@@ -10,7 +10,7 @@ export const TOKENOMICS: TokenomicsSlice[] = [
   {
     label: "LP via ape.store",
     percentage: 100,
-    amount: "100,000,000,000",
+    amount: "1,000,000,000",
     color: "#FFD700",
     description: "100% launched on LP via ape.store",
   },

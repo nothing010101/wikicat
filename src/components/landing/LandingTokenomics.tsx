@@ -16,7 +16,7 @@ export function LandingTokenomics() {
             <span className="gradient-text">TOKENOMICS</span>
           </h2>
           <p className="text-gray-500 text-lg">
-            Total Supply: <span className="font-black text-wiki-yellow">100,000,000,000 $WIKI</span>
+            Total Supply: <span className="font-black text-wiki-yellow">1,000,000,000 $WIKI</span>
           </p>
         </motion.div>
 
@@ -27,17 +27,17 @@ export function LandingTokenomics() {
           className="bg-wiki-card border border-wiki-yellow/20 rounded-2xl p-6 mb-10 text-center max-w-2xl mx-auto"
         >
           <p className="text-white font-black text-2xl mb-2">100%</p>
-          <p className="text-wiki-yellow font-bold text-lg mb-1">On LP via bankr.bot</p>
+          <p className="text-wiki-yellow font-bold text-lg mb-1">On LP via ape.store</p>
           <p className="text-gray-500 text-sm mt-3">
-            No team allocation. No treasury cut. No presale. 100 billion $WIKI launched directly to liquidity via{" "}
-            <span className="text-wiki-yellow font-semibold">bankr.bot</span> — fair, transparent, community-owned from day one.
+            No team allocation. No treasury cut. No presale. 1 billion $WIKI launched directly to liquidity via{" "}
+            <span className="text-wiki-yellow font-semibold">ape.store</span> — fair, transparent, community-owned from day one.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           {[
-            { label: "Total Supply", value: "100,000,000,000", sub: "$WIKI" },
-            { label: "LP Allocation", value: "100%", sub: "via bankr.bot" },
+            { label: "Total Supply", value: "1,000,000,000", sub: "$WIKI" },
+            { label: "LP Allocation", value: "100%", sub: "via ape.store" },
             { label: "Network", value: "Base", sub: "Mainnet" },
           ].map((item, i) => (
             <motion.div

@@ -2,21 +2,11 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Users } from "lucide-react";
+import { useReadContract } from "wagmi";
+import { MINT_CONTRACT_ABI, CONTRACT_ADDRESSES } from "@/lib/contracts";
 
-const STORAGE_KEY = "wikicat_vote_deadline";
-const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000;
-
-function getOrCreateDeadline(): number {
-  if (typeof window === "undefined") return Date.now() + SEVEN_DAYS_MS;
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored) {
-    const parsed = parseInt(stored, 10);
-    if (!isNaN(parsed)) return parsed;
-  }
-  const deadline = Date.now() + SEVEN_DAYS_MS;
-  localStorage.setItem(STORAGE_KEY, String(deadline));
-  return deadline;
-}
+// Fallback: known vote deadline (mintDeadline 1778838841 + 7 days)
+const FALLBACK_VOTE_DEADLINE_MS = 1779443641 * 1000;
 
 function getTimeLeft(deadlineMs: number) {
   const diff = deadlineMs - Date.now();
@@ -35,21 +25,26 @@ function Pad({ n }: { n: number }) {
 }
 
 export function MintCountdown() {
-  const [deadline, setDeadline] = useState<number | null>(null);
-  const [voteTime, setVoteTime] = useState({ days: 7, hours: 0, minutes: 0, seconds: 0, ended: false });
+  const { data: deadlineRaw } = useReadContract({
+    address: CONTRACT_ADDRESSES.mintContract,
+    abi: MINT_CONTRACT_ABI,
+    functionName: "mintDeadline",
+  });
+
+  // Vote deadline = mintDeadline from contract + 7 days
+  // Falls back to hardcoded value if contract not yet loaded
+  const voteDeadlineMs = deadlineRaw && Number(deadlineRaw) > 0
+    ? Number(deadlineRaw) * 1000 + 7 * 24 * 60 * 60 * 1000
+    : FALLBACK_VOTE_DEADLINE_MS;
+
+  const [voteTime, setVoteTime] = useState(() => getTimeLeft(FALLBACK_VOTE_DEADLINE_MS));
 
   useEffect(() => {
-    const dl = getOrCreateDeadline();
-    setDeadline(dl);
-  }, []);
-
-  useEffect(() => {
-    if (!deadline) return;
-    const tick = () => setVoteTime(getTimeLeft(deadline));
+    const tick = () => setVoteTime(getTimeLeft(voteDeadlineMs));
     tick();
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
-  }, [deadline]);
+  }, [voteDeadlineMs]);
 
   return (
     <section className="py-12 px-4">
